@@ -7,7 +7,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="{{ route('landing-page') }}"><span>Harapan Bangsa</span></a></h1>
+          <h1 class="text-light"><a href="{{ route('landing-page') }}"><span>SMPN 1 Satap Sanggau</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
         </div>
@@ -33,7 +33,6 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Asal Sekolah</th>
-                                <th>Jurusan</th>
                                 <th>Orang Tua</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -44,7 +43,6 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Asal Sekolah</th>
-                                <th>Jurusan</th>
                                 <th>Orang Tua</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -57,7 +55,6 @@
                                 <td>{{$i}}</td>
                                 <td>{{$item->peserta->nama}}</td>
                                 <td>{{$item->peserta->asal_sekolah}}</td>
-                                <td>{{$item->peserta->jurusan->jurusan}}</td>
                                 <td>{{$item->peserta->nama_ortu}}</td>
                                 <td>
                                     @if ($item->status == 'MENUNGGU')

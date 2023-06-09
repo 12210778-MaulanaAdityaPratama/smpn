@@ -5,7 +5,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="{{ route('landing-page') }}"><span>Harapan Bangsa</span></a></h1>
+          <h1 class="text-light"><a href="{{ route('landing-page') }}"><span>SMPN 1 Satap Sanggau</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
         </div>
@@ -119,18 +119,7 @@
                                 <textarea name="alamat" rows="10" class="form-control"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Jurusan</label>
-                                <select name="id_jurusan" class="form-control">
-                                    @forelse ($jurusan as $item)
-                                        <option value="{{ $item->id }}">{{ $item->jurusan }}</option>                                        
-                                    @empty
-                                        <option value="">NO Data</option>
-                                    @endforelse
-                                </select>
-                            </div>
-                        </div>
+                       
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>

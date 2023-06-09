@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Harapan Bangsa - @yield('title')</title>
+    <title>Satap Sanggau - @yield('title')</title>
 
     <!-- Custom fonts for this template-->
    @include('includes.style')

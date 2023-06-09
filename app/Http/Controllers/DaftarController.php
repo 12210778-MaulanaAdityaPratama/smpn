@@ -11,7 +11,6 @@ use App\Models\Agama;
 use App\Models\JenisKelamin;
 use App\Models\PenghasilanOrangtua;
 use App\Models\PekerjaanOrangtua;
-use App\Models\Jurusan;
 use App\Models\PesertaPPDB;
 use App\Models\BiodataOrtu;
 use App\Models\Hasil;
@@ -34,9 +33,8 @@ class DaftarController extends Controller
         $jenkel = JenisKelamin::all();
         $hasil_ortu = PenghasilanOrangtua::all();
         $pekerjaan_ortu = PekerjaanOrangtua::all();
-        $jurusan = Jurusan::all();
         return view('pages.user-flow.pendaftaran', compact(
-            'agama', 'jenkel', 'hasil_ortu', 'pekerjaan_ortu', 'jurusan' 
+            'agama', 'jenkel', 'hasil_ortu', 'pekerjaan_ortu'
         ));
     }
 
@@ -47,7 +45,6 @@ class DaftarController extends Controller
         $validator = \Validator::make($request->all(), [
             'id_jenis_kelamin' => 'required|exists:tbl_jenis_kelamin,id',
             'id_agama' => 'required|exists:tbl_agama,id',
-            'id_jurusan' => 'required|exists:tbl_jurusan,id',
             'nama' => 'required',
             'tanggal_lahir' => 'date|before:yesterday',
             'tempat_lahir' => 'required',
@@ -71,7 +68,6 @@ class DaftarController extends Controller
             'nama' => $request->nama,
             'id_jenis_kelamin' => $request->id_jenis_kelamin,
             'id_agama' => $request->id_agama,
-            'id_jurusan' => $request->id_jurusan,
             'tanggal_lahir' => $request->tanggal_lahir,
             'tempat_lahir' => $request->tempat_lahir,
             'asal_sekolah' => $request->asal_sekolah,

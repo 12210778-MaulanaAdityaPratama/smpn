@@ -29,10 +29,6 @@
                         <td>{{ $item->peserta->no_telp }}</td>
                     </tr>
                     <tr>
-                        <td>Jurusan</td>
-                        <td>{{ $item->peserta->jurusan->jurusan }}</td>
-                    </tr>
-                    <tr>
                         <td>Agama</td>
                         <td>{{ $item->peserta->agama->nama_agama }}</td>
                     </tr>

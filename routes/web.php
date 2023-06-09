@@ -31,14 +31,13 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/admin', 'DashboardController@index')->name('home');
     Route::get('/admin/detail/{id}', 'DashboardController@detail')->name('detail-peserta');
 	Route::patch('/admin/diterima/{id}', 'DashboardController@terima')->name('peserta-diterima');
-	Route::patch('/admin/ditolak/{id}', 'DashboardController@ditolak')->name('peserta-ditolak');
+	Route::patch('/admin/ditolak/{id}', 'DashboardController@tolak')->name('peserta-ditolak');
 	Route::get('/download', 'DashboardController@download')->name('download');
 	
     // Master Data
 	Route::resource('admin/agama', 'AgamaController');
 	Route::resource('admin/user', 'UserController');
 	Route::resource('admin/jenis_kelamin', 'JenisKelaminController');
-	Route::resource('admin/jurusan', 'JurusanController');
 	Route::resource('admin/pekerjaan_ortu', 'PekerjaanOrangTuaController');
 	Route::resource('admin/penghasilan_ortu', 'PenghasilanOrangtuaController');
 });

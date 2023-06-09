@@ -14,12 +14,6 @@ class PesertaPPDB extends Model
     {
         return $this->hasOne(BiodataOrtu::class, 'id_peserta_ppdb','id');
     }
-
-    public function jurusan()
-    {
-        return $this->belongsTo(Jurusan::class, 'id_jurusan');
-    }
-
     public function agama()
     {
         return $this->belongsTo(Agama::class, 'id_agama');

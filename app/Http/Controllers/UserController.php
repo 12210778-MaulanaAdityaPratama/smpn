@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // Call Package
 use RealRashid\SweetAlert\Facades\Alert; 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 // Call Models
 use App\Models\User; 
@@ -42,10 +43,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['sometimes', 'string', 'min:8', 'confirmed'],
         ]);
 
         if ($validator->fails()) {
@@ -98,10 +99,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = \Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['sometimes', 'string', 'min:8', 'confirmed'],
         ]);
 
         if ($validator->fails()) {
